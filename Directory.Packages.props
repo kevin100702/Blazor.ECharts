@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Override root Directory.Packages.props — ECharts manages its own package versions -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+</Project>

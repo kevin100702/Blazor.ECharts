@@ -60,6 +60,7 @@ export class echartsFunctions {
     static setupChart(id, theme, option, setupoption) {
         let opt = eval('(' + option + ')');
         let opts = eval('(' + setupoption + ')');
+        console.log('[Blazor.ECharts] setupChart payload', { id, theme, option, setupoption, opt, opts });
         let chart = this.getChart(id);
         if (chart === null) {
             chart = this.initChart(id, theme);

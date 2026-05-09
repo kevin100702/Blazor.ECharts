@@ -17,6 +17,26 @@ namespace Blazor.ECharts.Options
         public Area[] Areas { get; set; }
         public Selected[] Selected { get; set; }
         public string Type { get; set; }
+
+        /// <summary>
+        /// DataZoom: start percentage (0-100)
+        /// </summary>
+        public double? Start { get; set; }
+
+        /// <summary>
+        /// DataZoom: end percentage (0-100)
+        /// </summary>
+        public double? End { get; set; }
+
+        /// <summary>
+        /// DataZoom: start value (Unix ms for time axis)
+        /// </summary>
+        public double? StartValue { get; set; }
+
+        /// <summary>
+        /// DataZoom: end value (Unix ms for time axis)
+        /// </summary>
+        public double? EndValue { get; set; }
     }
 
     public record Area

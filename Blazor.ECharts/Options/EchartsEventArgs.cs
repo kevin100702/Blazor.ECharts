@@ -87,6 +87,26 @@ namespace Blazor.ECharts.Options
         public IEnumerable<EchartsEventBatch> Batch { get; set; }
 
         /// <summary>
+        /// DataZoom: start percentage (0-100) — present when no batch
+        /// </summary>
+        public double? Start { get; set; }
+
+        /// <summary>
+        /// DataZoom: end percentage (0-100) — present when no batch
+        /// </summary>
+        public double? End { get; set; }
+
+        /// <summary>
+        /// DataZoom: start value (Unix ms for time axis) — present when no batch
+        /// </summary>
+        public double? StartValue { get; set; }
+
+        /// <summary>
+        /// DataZoom: end value (Unix ms for time axis) — present when no batch
+        /// </summary>
+        public double? EndValue { get; set; }
+
+        /// <summary>
         /// BrushEnd 事件的返回参数
         /// </summary>
         public Area[] Areas { get; set; }

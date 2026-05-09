@@ -33,6 +33,11 @@ namespace Blazor.ECharts.Options
         public object NameGap { set; get; }
 
         /// <summary>
+        /// 坐标轴名字旋转，角度值。
+        /// </summary>
+        public double? NameRotate { set; get; }
+
+        /// <summary>
         /// 是否是反向坐标轴
         /// </summary>
         public bool? Inverse { set; get; }

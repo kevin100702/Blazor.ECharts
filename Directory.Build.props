@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Disable central package management — Blazor.ECharts specifies its own package versions -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+</Project>

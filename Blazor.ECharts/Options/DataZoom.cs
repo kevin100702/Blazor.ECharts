@@ -281,6 +281,11 @@ namespace Blazor.ECharts.Options
         /// <para>bottom 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比。</para>
         /// </summary>
         public object Bottom { set; get; }
+
+        /// <summary>
+        /// dataZoom-slider组件的高度。
+        /// </summary>
+        public object Height { set; get; }
     }
     public record DataBackground
     {

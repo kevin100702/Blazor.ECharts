@@ -219,18 +219,44 @@ namespace Blazor.ECharts
         /// <returns></returns>
         public async ValueTask InvokeVoidAsync(string identifier, params object?[] args)
         {
-            var module = await moduleTask.Value;
-            await module.InvokeVoidAsync(identifier, args);
+            try
+            {
+                var module = await moduleTask.Value;
+                await module.InvokeVoidAsync(identifier, args);
+            }
+            catch (JSDisconnectedException)
+            {
+                // Blazor Server 刷新/离开页面时连接可能已断开，忽略调用
+            }
+            catch (ObjectDisposedException)
+            {
+                // JSRuntime 或模块已释放，忽略调用
+            }
         }
 #nullable disable
 
         public async ValueTask DisposeAsync()
         {
-            if (moduleTask.IsValueCreated)
+            if (!moduleTask.IsValueCreated)
+            {
+                GC.SuppressFinalize(this);
+                return;
+            }
+
+            try
             {
                 var module = await moduleTask.Value;
                 await module.DisposeAsync();
             }
+            catch (JSDisconnectedException)
+            {
+                // Blazor Server 刷新/离开页面时连接可能已断开，忽略释放异常
+            }
+            catch (ObjectDisposedException)
+            {
+                // 模块或运行时已经释放，忽略
+            }
+
             GC.SuppressFinalize(this);
         }
     }
