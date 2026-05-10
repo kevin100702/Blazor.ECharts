@@ -121,7 +121,7 @@ namespace Blazor.ECharts.Options.Series.Line
         /// 是否是阶梯线图。可以设置为 true 显示成阶梯线图，也支持设置成 'start', 'middle', 'end' 分别配置在当前点，当前点与下个点的中间点，下个点拐弯。
         /// <para>点击<see href="https://echarts.apache.org/zh/option.html#series-line.step ">此处</see>查看详细设置</para>
         /// </summary>
-        public bool? Step { set; get; }
+        public object Step { set; get; }
 
         /// <summary>
         /// 区域填充样式。
