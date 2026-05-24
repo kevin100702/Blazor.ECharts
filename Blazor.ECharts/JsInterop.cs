@@ -195,8 +195,19 @@ namespace Blazor.ECharts
         public async Task DisposeChart(string id)
         {
             if (string.IsNullOrWhiteSpace(id)) throw new ArgumentNullException(nameof(id), "echarts控件id不能为空");
-            var module = await moduleTask.Value;
-            await module.InvokeVoidAsync("echartsFunctions.dispose", id);
+            try
+            {
+                var module = await moduleTask.Value;
+                await module.InvokeVoidAsync("echartsFunctions.dispose", id);
+            }
+            catch (JSDisconnectedException)
+            {
+                // Blazor Server 断开连接/刷新页面时，组件释放阶段不能再调用 JS，忽略即可。
+            }
+            catch (ObjectDisposedException)
+            {
+                // JSRuntime 或模块已经释放，忽略重复释放。
+            }
         }
         /// <summary>
         /// 清空当前实例，会移除实例中所有的组件和图表。

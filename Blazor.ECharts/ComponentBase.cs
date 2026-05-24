@@ -353,10 +353,19 @@ namespace Blazor.ECharts
         }
         public async ValueTask DisposeAsync()
         {
-            if (IsPrerenderPhase) return;
-            await RemoveResizeListener();
-            _objectReference?.Dispose();
-            GC.SuppressFinalize(this);
+            try
+            {
+                if (!IsPrerenderPhase)
+                {
+                    await RemoveResizeListener();
+                    await JsInterop.DisposeChart(Id);
+                }
+            }
+            finally
+            {
+                _objectReference?.Dispose();
+                GC.SuppressFinalize(this);
+            }
         }
     }
 }

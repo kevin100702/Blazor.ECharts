@@ -236,7 +236,7 @@ namespace Blazor.ECharts.Options
         /// <summary>
         /// 是否在 dataZoom-silder 组件中显示数据阴影。数据阴影可以简单地反应数据走势。
         /// </summary>
-        public string ShowDataShadow { set; get; }
+        public bool ShowDataShadow { set; get; }
 
         /// <summary>
         /// 
