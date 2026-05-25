@@ -13,6 +13,8 @@
 		</Description>
 		<AssemblyName>Blazor.ECharts.WordCloud</AssemblyName>
 		<RootNamespace>Blazor.ECharts.WordCloud</RootNamespace>
+		<PackageId>WebSCADA.Echarts.WordCloud</PackageId>
+		<Product>WebSCADA.Echarts.WordCloud</Product>
 		<PackageProjectUrl>https://github.com/lishewen/Blazor.ECharts</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/lishewen/Blazor.ECharts</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>

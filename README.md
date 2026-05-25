@@ -33,7 +33,7 @@ ECharts配置请参考：
 ```
 5. 在`wwwroot/index.html`文件的`Body`中引入：
 ```html
-<script type="module" src="_content/Blazor.ECharts/core.js"></script>
+<script type="module" src="_content/WebSCADA.Echarts/core.js"></script>
 ```
 6. 修改`Program.cs`增加
 ```csharp

@@ -14,6 +14,8 @@
 		</Description>
 		<AssemblyName>Blazor.ECharts</AssemblyName>
 		<RootNamespace>Blazor.ECharts</RootNamespace>
+		<PackageId>WebSCADA.Echarts</PackageId>
+		<Product>WebSCADA.Echarts</Product>
 		<PackageProjectUrl>https://github.com/lishewen/Blazor.ECharts</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/lishewen/Blazor.ECharts</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
